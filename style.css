@@ -93,5 +93,15 @@ h3.left{
     .obj{
         font-size:80%;
     }
+    .box{
+        width:10px;
+        height:10px;
+        margin:0 2px;
+    }
+    h3.left{
+        text-align: left;
+        position: relative;
+        left:5vw;
+    }
 }
 
