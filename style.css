@@ -1,0 +1,96 @@
+body{
+    font-family: serif;
+    margin:0;
+    text-align: center;
+    background-color:#eeffff;
+}
+header {
+    color:#000000;
+    position: absolute;
+    top:0;
+    height: 50vh;
+    width:100%;
+    font-size:200%;
+    background: url(img/background.jpg) center / cover;
+    z-index: 1;
+}
+.caption{
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+	color: #fff;
+	font-size: 1.2rem;
+	line-height: 1;
+	font-family: "Dosis", sans-serif;
+	letter-spacing: .05em;
+	text-align: right;
+}
+a.toplink{
+    padding: 0 5vw;
+    text-decoration: none;
+    color:#333333;
+    transition: all .3s;
+}
+a.toplink:hover{
+    color: #fff;
+    background-color:#0000ff;
+}
+.main{
+    
+    font-size:100%;
+    padding: 50vh 16px;
+	font-size: 1.6rem;
+}
+.top{
+    position: relative;
+    top:30vh;
+}
+.header{
+    background-color: rgba( 255, 255, 255, 0.6 );
+}
+.obj{
+    background-color:#ffffff;
+    margin: 10vh 0;
+}
+.image{
+    position: relative;
+    margin-right:10px;
+    width:40vw;
+    height:auto;
+}
+p{
+    font-size:80%;
+}
+.box{
+    display:inline-block;
+    position: relative;
+    background-color:#Ff0099;
+    margin:0 5px;
+    width:25px;
+    height:25px;
+}
+h3.left{
+    text-align: left;
+    position: relative;
+    left:35vw;
+}
+.pp{
+    display:inline-block;
+    width:200px;
+}
+@media all and (max-width: 700px) {
+    header {          
+        font-size:100%;
+        height: 30vh;
+    }
+    .main{
+        padding: 30vh 16px;
+    }
+    a.toplink{
+        font-size:80%;
+    }
+    .obj{
+        font-size:80%;
+    }
+}
+
