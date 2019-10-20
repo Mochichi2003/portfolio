@@ -4,6 +4,7 @@ body{
     text-align: center;
 }
 header {
+    font-family:cursive;
     color:#000000;
     position: absolute;
     top:0;
@@ -27,12 +28,30 @@ header {
 a.toplink{
     padding: 0 5vw;
     text-decoration: none;
-    color:#333333;
+    color:#ddddff;
     transition: all .3s;
 }
 a.toplink:hover{
     color: #fff;
     background-color:#0000ff;
+}
+a.totoplink{
+    text-decoration: none;
+    color:#333333;
+    transition: all .3s;
+}
+a.totoplink:hover{
+    color: #00f;
+}
+a.normallink{
+    padding: 3px 5vw;
+    text-decoration: none;
+    color:#000000;
+    transition: all .3s;    
+}
+a.normallink:hover{
+    color: #fff;
+    background-color:#333333;
 }
 .main{
     background-color:#333333;
@@ -79,6 +98,33 @@ h3.left{
     display:inline-block;
     width:200px;
 }
+h3.bold{
+    font-weight: bold;
+}
+hr.point {
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+li{
+    list-style-type: none
+}
+#scroll_to_top {
+    /* 「TOPに戻る」ボタンにカーソルを載せた時に、
+    カーソルが指のマークになるようにしています。 */
+    cursor: pointer;
+    /* 常にページの右下に表示されるように固定します。 */
+    position: fixed;  /* 位置を固定させます。 */
+    right: 20px;      /* 画面の右橋から20px空けます。 */
+    bottom: 20px;     /* 画面の下端から20px空けます。 */
+}
+#scroll_to_top.button {
+    /* 「TOPに戻る」ボタンのデザインを整えています。 */
+    font-size: 15px;
+    display: inline-block;
+    border: 1px solid #999;
+    border-radius: 1em;
+    background-color: #eee;
+}
 @media all and (max-width: 700px) {
     header {          
         font-size:100%;
@@ -102,6 +148,9 @@ h3.left{
         text-align: left;
         position: relative;
         left:0;
+    }
+    .pp{
+        width:150px;
     }
 }
 
