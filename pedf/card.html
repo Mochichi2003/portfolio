@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .hp{
+            width:100%;
+            height:150px;
+            font-size:200%;
+        }
+        .big{
+            font-size:300%;
+        }
+        .green{
+            color:green;
+        }
+        .blue{
+            color:blue;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <table class="hp">
+        <tr>
+            <td>1P</td>
+            <td>2P</td>
+        </tr>
+        <tr>
+                <td class="big">PP <span id="hp1">0</span></td>
+                <td class="big">PP <span id="hp2">0</span></td>
+        </tr>
+        <tr>
+                <td><span class="green">land <span id="la1">0</span></span><span class="blue"> sea <span id="se1">0</span></span><span class="red"> human <span id="hu1">0</span></span></td>
+                <td><span class="green">land <span id="la2">0</span></span><span class="blue"> sea <span id="se2">0</span></span><span class="red"> human <span id="hu2">0</span></span></td>
+        </tr>
+        <tr>
+                <td><input type="button" value="PP +100" onclick="pp(100);"><input type="button" value="PP +1000" onclick="pp(1000);"><input type="button" value="PP -100" onclick="mpp(100);"><input type="button" value="PP -1000" onclick="mpp(1000);"></td>
+                <td><input type="button" value="PP +100" onclick="pp2(100);"><input type="button" value="PP +1000" onclick="pp2(1000);"><input type="button" value="PP -100" onclick="mpp2(100);"><input type="button" value="PP -1000" onclick="mpp2(1000);"></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="ninyi" value="0"><input type="button" value="＋" onclick="pp(document.getElementById('ninyi').value)"><input type="button" value="ー" onclick="mpp(document.getElementById('ninyi').value)"></td>
+            <td><input type="number" id="ninyi2" value="0"><input type="button" value="＋" onclick="pp2(document.getElementById('ninyi2').value)"><input type="button" value="ー" onclick="mpp2(document.getElementById('ninyi2').value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Land +1" onclick="riku(1)"><input type="button" value="Land -1" onclick="riku(-1)"><input type="button" value="Sea +1" onclick="umi(1)"><input type="button" value="Sea -1" onclick="umi(-1)"><input type="button" value="Human +1" onclick="hito(1)"><input type="button" value="Human -1" onclick="hito(-1)"></td>
+            <td><input type="button" value="Land +1" onclick="riku2(1)"><input type="button" value="Land -1" onclick="riku2(-1)"><input type="button" value="Sea +1" onclick="umi2(1)"><input type="button" value="Sea -1" onclick="umi2(-1)"><input type="button" value="Human +1" onclick="hito2(1)"><input type="button" value="Human -1" onclick="hito2(-1)"></td>
+        </tr>
+    </table>
+    <script>
+    var num=0
+    var cnt = 0;
+    var motopp1=0;
+    var motopp2=0;
+    var nowpp1=0;
+    var nowpp2=0;
+    var nowca1=0;
+    var nowca2=0;
+    var nowla1=0;
+    var nowla2=0;
+    var nowse1=0;
+    var nowse2=0;
+    var nowhu1=0;
+    var nowhu2=0;
+    var playd=0;
+    function riku(atai){
+        nowla1+=atai
+        reload()
+    }
+    function umi(atai){
+        nowse1+=atai
+        reload()
+    }
+    function hito(atai){
+        nowhu1+=atai
+        reload()
+    }
+    function riku2(atai){
+        nowla2+=atai
+        reload()
+    }
+    function umi2(atai){
+        nowse2+=atai
+        reload()
+    }
+    function hito2(atai){
+        nowhu2+=atai
+        reload()
+    }
+    function event1() {
+ 
+        cnt++;
+        nowpp1=Math.round(nowpp1+num/100)
+        if (cnt >= 100 && timer1 != null) {
+            // 5回以上表示したら、タイマーを停止する
+            clearInterval(timer1);
+            playd=0
+            document.getElementById("hp1").style.color="#000000"
+            nowpp1=parseInt(motopp1)+parseInt(num)
+        }
+        reload()
+    }
+    function eventm1() {
+ 
+        cnt++;
+        nowpp1=Math.round(nowpp1-num/100)
+        if (cnt >= 100 && timerm1 != null) {
+            // 5回以上表示したら、タイマーを停止する
+            clearInterval(timerm1);
+            playd=0
+            document.getElementById("hp1").style.color="#000000"
+            nowpp1=parseInt(motopp1)-parseInt(num)
+        }
+        reload()
+    }
+    function event2() {
+
+        cnt++;
+        nowpp2=Math.round(nowpp2+num/100)
+        if (cnt >= 100 && timer2 != null) {
+            // 5回以上表示したら、タイマーを停止する
+            clearInterval(timer2);
+            playd=0
+            document.getElementById("hp2").style.color="#000000"
+            nowpp2=parseInt(motopp2)+parseInt(num)
+        }
+        reload()
+    }
+    function eventm2() {
+
+        cnt++;
+        nowpp2=Math.round(nowpp2-num/100)
+        if (cnt >= 100 && timerm2 != null) {
+            // 5回以上表示したら、タイマーを停止する
+            clearInterval(timerm2);
+            playd=0
+            document.getElementById("hp2").style.color="#000000"
+            nowpp2=parseInt(motopp2)-parseInt(num)
+        }
+        reload()
+    }
+    function pp(kaisu){
+        if(playd==1){
+            return
+        }
+        document.getElementById("hp1").style.color="#ff0000"
+        num=kaisu
+        motopp1=nowpp1
+        // タイマー開始
+        playd=1
+        timer1 = setInterval(event1, 0.5);
+        cnt=0
+    }
+    function pp2(kaisu){
+        if(playd==1){
+            return
+        }
+        document.getElementById("hp2").style.color="#000000"
+        num=kaisu
+        motopp2=nowpp2
+        // タイマー開始
+        playd=1
+        timer2 = setInterval(event2, 0.5);
+        cnt=0
+    }
+    function mpp(kaisu){
+        if(playd==1){
+            return
+        }
+        document.getElementById("hp1").style.color="#0000ff"
+        motopp1=nowpp1
+        num=kaisu
+        // タイマー開始
+        playd=1
+        timerm1 = setInterval(eventm1, 1);
+        cnt=0
+    }
+    function mpp2(kaisu){
+        if(playd==1){
+            return
+        }
+        document.getElementById("hp2").style.color="#0000ff"
+        motopp2=nowpp2
+        num=kaisu
+        // タイマー開始
+        playd=1
+        timerm2 = setInterval(eventm2, 1);
+        cnt=0
+    }
+    function reload(){
+        document.getElementById("hp1").innerHTML=nowpp1
+        document.getElementById("hp2").innerHTML=nowpp2
+        document.getElementById("la1").innerHTML=nowla1
+        document.getElementById("la2").innerHTML=nowla2
+        document.getElementById("se1").innerHTML=nowse1
+        document.getElementById("se2").innerHTML=nowse2
+        document.getElementById("hu1").innerHTML=nowhu1
+        document.getElementById("hu2").innerHTML=nowhu2
+    }
+    </script>
+</body>
+</html>
