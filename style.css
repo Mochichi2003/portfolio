@@ -28,12 +28,12 @@ header {
 a.toplink{
     padding: 0 5vw;
     text-decoration: none;
-    color:#ddddff;
+    color:#6af;
     transition: all .3s;
 }
 a.toplink:hover{
     color: #fff;
-    background-color:#0000ff;
+    background-color:#6af;
 }
 a.totoplink{
     text-decoration: none;
@@ -41,7 +41,7 @@ a.totoplink{
     transition: all .3s;
 }
 a.totoplink:hover{
-    color: #00f;
+    color: #6af;
 }
 a.normallink{
     padding: 3px 5vw;
@@ -124,6 +124,11 @@ li{
     border: 1px solid #999;
     border-radius: 1em;
     background-color: #eee;
+}
+.usegengo{
+    background-color:#acf;
+    padding:1vh 1vh;
+    border-radius: 5px;
 }
 @media all and (max-width: 700px) {
     header {          
