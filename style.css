@@ -84,10 +84,18 @@ p{
 .box{
     display:inline-block;
     position: relative;
-    background-color:#Ff0099;
+    background-color:#6af;
     margin:0 5px;
     width:25px;
     height:25px;
+}
+.boxf{
+    display:inline-block;
+    position: relative;
+    border:1px solid #6af;
+    margin:0 5px;
+    width:24px;
+    height:24px;
 }
 h3.left{
     text-align: left;
@@ -109,16 +117,12 @@ li{
     list-style-type: none
 }
 #scroll_to_top {
-    /* 「TOPに戻る」ボタンにカーソルを載せた時に、
-    カーソルが指のマークになるようにしています。 */
     cursor: pointer;
-    /* 常にページの右下に表示されるように固定します。 */
-    position: fixed;  /* 位置を固定させます。 */
-    right: 20px;      /* 画面の右橋から20px空けます。 */
-    bottom: 20px;     /* 画面の下端から20px空けます。 */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
 }
 #scroll_to_top.button {
-    /* 「TOPに戻る」ボタンのデザインを整えています。 */
     font-size: 15px;
     display: inline-block;
     border: 1px solid #999;
